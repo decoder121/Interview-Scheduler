@@ -1,0 +1,118 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Inteview scheduler</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,maximum-scale=1.0,initial-scale=1.0,  user-scalable=0" />
+		<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+		<link rel="stylesheet" href="{% static 'interviewapp/css/main.css' %}" />
+		<noscript><link rel="stylesheet" href="{% static 'interviewapp/css/noscript.css' %}" /></noscript>
+ 
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+	</head>
+	<body class="is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header">
+					
+
+						<nav class="navbar navbar-expand-lg navbar-light bg-light" style="width: 100%;">
+                                     <b><a class="navbar-brand" href="#" style="font-size:40px;">Interview Scheduler</a></b>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+</nav>
+					</header>
+				</div>
+						<br>
+
+<style>
+	.container1{
+height: 100%;
+margin-top:10%;
+margin-bottom: 10%;
+}
+
+.card1{
+height: auto;
+margin-top: -20%;
+
+margin-left: 15%; 
+width:950px;
+background-color: rgba(0,0,0,0.5) !important;
+
+
+
+}
+
+
+.card1-header h3{
+color: white;
+}
+
+
+.links{
+color: white;
+}
+
+.links a{
+margin-left: 4px;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+</style>
+
+
+
+
+
+<div class="container1">
+
+				<div class="d-flex justify-content-center h-1001">
+
+	
+			<div class="card1">
+			    <div class="card1-header">
+			    	<h3 style="margin-top: 130px;font-size:30px;margin-left: 30%;">Create Participant </h3>
+				</div>
+
+						
+				 
+				 <div class="card1-body">		
+                 <form action="{% url 'participant-create' %}" method="post" style="margin-top: 60px;">
+					{% csrf_token %}
+					<div class="input-group form-group" style="border-radius:10px;width:50%;margin-left: 260px; border:1px solid white;">
+					<input label="name" name="name" type="text" class="form-control" placeholder="Name" style="background-color: transparent;color:white;">
+				</div>
+				<div class="input-group form-group" style="border-radius:10px;width:50%;margin-left: 260px; border:1px solid white;">
+					<input label="email" name="email" type="email" class="form-control" placeholder="Email" style="background-color: transparent;color:white;">
+				</div>
+				<div class="input-group form-group" style="border-radius:10px;width:50%;margin-left: 260px; border:1px solid white;">
+					Upload Resume:
+					<br>
+
+				<input label="resume" name="resume"  type="file" accept=".doc,.docx,application/pdf"/></div>
+					
+				  
+					<input type="submit" value="Submit" style="border-radius: 15px; margin-top:60px;margin-left: 45%;">
+			
+				</div>
+				</form>
+			    </div>
+
+                 
+                
+		</div>
+	</div>
+</div>
+
+
+</body>
+</html>
